@@ -5,70 +5,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-
-    <!-- Lightgallery -->
     <link href="https://sachinchoolur.github.io/lightGallery/lightgallery/css/lightgallery.css" rel="stylesheet">
-
-    <!-- Masonry -->
-    <style type="text/css">
-      .grid-item {
-        float: left;
-      }
-      .grid-item img {
-        cursor: pointer;
-        display: block;
-        max-width: 100%;
-      }
-      /* default: Lower that 576px */
-      .grid-sizer,
-      .grid-item {
-        width: 50%;
-      }
-      /* Small devices (landscape phones, 576px and up) */
-      @media (min-width: 576px) {
-        .grid-sizer,
-        .grid-item {
-          width: 33.333%;
-        }
-      }
-      /* Medium devices (tablets, 768px and up) */
-      @media (min-width: 768px) {
-        .grid-sizer,
-        .grid-item {
-          width: 25%;
-        }
-      }
-      /* Large devices (desktops, 992px and up) */
-      @media (min-width: 992px) {
-        .grid-sizer,
-        .grid-item {
-          width: 20%;
-        }
-      }
-      /* Extra large devices (large desktops, 1200px and up) */
-      @media (min-width: 1200px) {
-        .grid-sizer,
-        .grid-item {
-          width: 16.666%;
-        }
-      }
-    </style>
-
-    <!-- Gundam data -->
-    <script src="web/data.js"></script> 
+    <link href="./web/app.css" rel="stylesheet">
 
     <title>Odaiba Gundam</title>
   </head>
   <body>
 
+    <!-- main -->
     <div class="grid">
       <div class="grid-sizer"></div>
     </div>
     <span class="font-italic">Last updated 2018/07/09</span>
 
-    <!-- Optional JavaScript -->
+    <!-- loading modal -->
+    <div class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-dialog-centered text-center">
+        <h1 id="pct" class="w-100 text-white">0%</h1>
+      </div>
+    </div>
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -82,33 +40,9 @@
     <script src="https://sachinchoolur.github.io/lightGallery/lightgallery/js/lg-hash.js"></script>
     <script src="https://sachinchoolur.github.io/lightGallery/lightgallery/js/lg-zoom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
-
-    <script>
-      // render gundam photos
-      gundam_photos.forEach(function(row, index){
-        var url = row.imageUrl.replace("http://", "https://");
-        $('.grid').append(`
-          <div class="grid-item">
-            <a href="${url}" data-sub-html="No.${index+1} ${row.attributionMarkup[1].plain}<br>${row.voteCount} votes">
-              <img src="${url}">
-            </a>
-          </div>`);
-      });
-      // init Masonry
-      var $grid = $('.grid').masonry({
-        itemSelector: '.grid-item',
-        percentPosition: true,
-        columnWidth: '.grid-sizer'
-      });
-      // layout Masonry after each image loads
-      $grid.imagesLoaded().progress( function() {
-        $grid.masonry();
-      }); 
-      // slideshow
-      $('.grid').lightGallery({
-        selector: '.grid-item a'
-      });
-    </script>
+    <!-- App -->
+    <script src="./web/data.js"></script> 
+    <script src="./web/app.js"></script>
 
   </body>
 </html>
