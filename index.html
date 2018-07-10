@@ -8,8 +8,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
-    <!-- Zoom -->
-    <link rel="stylesheet" href="https://fat.github.io/zoom.js/css/zoom.css">
+    <!-- Lightgallery -->
+    <link href="https://sachinchoolur.github.io/lightGallery/lightgallery/css/lightgallery.css" rel="stylesheet">
 
     <!-- Masonry -->
     <style type="text/css">
@@ -21,7 +21,7 @@
         display: block;
         max-width: 100%;
       }
-      /* default: Lower that 576 */
+      /* default: Lower that 576px */
       .grid-sizer,
       .grid-item {
         width: 50%;
@@ -76,14 +76,22 @@
     <!-- Masonry and Imageloaded -->
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-    <!-- zoom -->
-    <script src="https://fat.github.io/zoom.js/js/zoom.js"></script>
+    <!-- Lightgallery -->
+    <script src="https://sachinchoolur.github.io/lightGallery/lightgallery/js/lightgallery.js"></script>
+    <script src="https://sachinchoolur.github.io/lightGallery/lightgallery/js/lg-fullscreen.js"></script>
+    <script src="https://sachinchoolur.github.io/lightGallery/lightgallery/js/lg-hash.js"></script>
+    <script src="https://sachinchoolur.github.io/lightGallery/lightgallery/js/lg-zoom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
 
     <script>
       // render gundam photos
       gundam_photos.forEach(function(row, index){
         $('.grid').append(`
-          <div class="grid-item"><img src="${row.imageUrl}" data-action="zoom"></div>`);
+          <div class="grid-item">
+            <a href="${row.imageUrl}" data-sub-html="No.${index+1} ${row.attributionMarkup[1].plain}<br>${row.voteCount} votes">
+              <img src="${row.imageUrl}">
+            </a>
+          </div>`);
       });
       // init Masonry
       var $grid = $('.grid').masonry({
@@ -95,6 +103,10 @@
       $grid.imagesLoaded().progress( function() {
         $grid.masonry();
       }); 
+      // slideshow
+      $('.grid').lightGallery({
+        selector: '.grid-item a'
+      });
     </script>
 
   </body>
