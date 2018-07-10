@@ -8,125 +8,93 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
-    <!-- PhotoSwipe -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.js"></script>
+    <!-- Zoom -->
+    <link rel="stylesheet" href="https://fat.github.io/zoom.js/css/zoom.css">
 
-    <!-- Gundam photos -->
+    <!-- Masonry -->
+    <style type="text/css">
+      .grid-item {
+        float: left;
+      }
+      .grid-item img {
+        cursor: pointer;
+        display: block;
+        max-width: 100%;
+      }
+      /* default: Lower that 576 */
+      .grid-sizer,
+      .grid-item {
+        width: 50%;
+      }
+      /* Small devices (landscape phones, 576px and up) */
+      @media (min-width: 576px) {
+        .grid-sizer,
+        .grid-item {
+          width: 33.333%;
+        }
+      }
+      /* Medium devices (tablets, 768px and up) */
+      @media (min-width: 768px) {
+        .grid-sizer,
+        .grid-item {
+          width: 25%;
+        }
+      }
+      /* Large devices (desktops, 992px and up) */
+      @media (min-width: 992px) {
+        .grid-sizer,
+        .grid-item {
+          width: 20%;
+        }
+      }
+      /* Extra large devices (large desktops, 1200px and up) */
+      @media (min-width: 1200px) {
+        .grid-sizer,
+        .grid-item {
+          width: 16.666%;
+        }
+      }
+    </style>
+
+    <!-- Gundam data -->
     <script src="web/data.js"></script> 
 
     <title>Odaiba Gundam</title>
   </head>
   <body>
 
-    <div class="container-fluid">
-      <h1>Odaiba Gundam</h1>
-      <span class="font-italic">Last updated 2018/07/09</span>
-      <!--
-      <div id="album" class="card-columns"></div>
-      -->
+    <div class="grid">
+      <div class="grid-sizer"></div>
     </div>
-
-    <!-- PhotoSwipe -->
-    <!-- Root element of PhotoSwipe. Must have class pswp. -->
-    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-        <!-- Background of PhotoSwipe. 
-             It's a separate element as animating opacity is faster than rgba(). -->
-        <div class="pswp__bg"></div>
-        <!-- Slides wrapper with overflow:hidden. -->
-        <div class="pswp__scroll-wrap">
-            <!-- Container that holds slides. 
-                PhotoSwipe keeps only 3 of them in the DOM to save memory.
-                Don't modify these 3 pswp__item elements, data is added later on. -->
-            <div class="pswp__container">
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-            </div>
-            <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-            <div class="pswp__ui pswp__ui--hidden">
-                <div class="pswp__top-bar">
-                    <!--  Controls are self-explanatory. Order can be changed. -->
-                    <div class="pswp__counter"></div>
-                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                    <button class="pswp__button pswp__button--share" title="Share"></button>
-                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                    <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                    <!-- element will get class pswp__preloader--active when preloader is running -->
-                    <div class="pswp__preloader">
-                        <div class="pswp__preloader__icn">
-                          <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                    <div class="pswp__share-tooltip"></div> 
-                </div>
-                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-                </button>
-                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-                </button>
-                <div class="pswp__caption">
-                    <div class="pswp__caption__center"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <span class="font-italic">Last updated 2018/07/09</span>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- Masonry and Imageloaded -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <!-- zoom -->
+    <script src="https://fat.github.io/zoom.js/js/zoom.js"></script>
 
     <script>
-      // album
-      /*
+      // render gundam photos
       gundam_photos.forEach(function(row, index){
-        $('#album').append(`
-          <div class="card">
-            <img class="card-img" src="${row.imageUrl}=s320">
-          </div>
-        `);
+        $('.grid').append(`
+          <div class="grid-item"><img src="${row.imageUrl}" data-action="zoom"></div>`);
       });
-      */
-
-      // slideshow
-      var pswpElement = document.querySelectorAll('.pswp')[0];
-      // build items array
-      var items = gundam_photos.map(function(row, index){
-        return {
-          title: `#${index+1} ${row.attributionMarkup[1].plain}<br>${row.voteCount} votes`,
-          src: row.imageUrl,
-          w: 0,
-          h: 0
-        }
+      // init Masonry
+      var $grid = $('.grid').masonry({
+        itemSelector: '.grid-item',
+        percentPosition: true,
+        columnWidth: '.grid-sizer'
       });
-      // define options (if needed)
-      var options = {
-          shareEl: false,
-      };
-      // update image size -- https://github.com/dimsemenov/PhotoSwipe/issues/796
-      var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
-      gallery.listen('gettingData', function(index, item) {
-        if (item.w < 1 || item.h < 1) { // unknown size
-          var img = new Image(); 
-          img.onload = function() { // will get size after load
-            item.w = this.width; // set image width
-            item.h = this.height; // set image height
-            gallery.invalidateCurrItems(); // reinit Items
-            gallery.updateSize(true); // reinit Items
-          }
-          img.src = item.src; // let's download image
-        }
-      });
-      // Initializes and opens PhotoSwipe
-      gallery.init();
+      // layout Masonry after each image loads
+      $grid.imagesLoaded().progress( function() {
+        $grid.masonry();
+      }); 
     </script>
 
   </body>
