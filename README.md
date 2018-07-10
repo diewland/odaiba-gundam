@@ -2,6 +2,7 @@
 Last updated 2018/07/09
 
 ### TODO
+* Packery -- https://github.com/twbs/bootstrap/issues/17882
 * Installation ( mitit )
 * How to gather data
 * How to fix mit if internet not found
