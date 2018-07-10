@@ -1,4 +1,7 @@
 /* Masonry */
+html {
+  overflow-y:scroll;
+}
 .grid-item {
   float: left;
 }
