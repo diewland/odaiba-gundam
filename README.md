@@ -3,7 +3,7 @@ Last updated 2018/07/09
 
 ### How to gather portal data
 
-0. read how to use mitmproxy as android proxy first ( link )
+0. read how to use mitmproxy as android proxy first ( <a href="https://medium.com/@diewland/how-to-sniff-android-network-65ca4bba1267">link</a> )
 1. start proxy server
 ```
 mitmdump -s get_portal_images.py
@@ -13,9 +13,6 @@ mitmdump -s get_portal_images.py
 3. view photo gallery ( data will update in ```portal_photos.json``` )
 4. scroll down till last photo ( data will update in ```portal_photos.json``` )
 5. now we got latest data in ```portal_photos.json```
-
-### TODO
-* Images lazyload
 
 ### References
 * python proxy - https://mitmproxy.org
