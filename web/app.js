@@ -8,7 +8,7 @@ gundam_photos.forEach(function(row, index){
   var url = row.imageUrl.replace("http://", "https://");
   $('.grid').append(`
     <div class="grid-item">
-      <a href="${url}" data-sub-html="No.${index+1} ${row.attributionMarkup[1].plain}<br>${row.voteCount} votes">
+      <a href="${url}=s1600" data-sub-html="No.${index+1} ${row.attributionMarkup[1].plain}<br>${row.voteCount} votes">
         <img src="${url}">
       </a>
     </div>`);
