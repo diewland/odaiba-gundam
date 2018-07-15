@@ -23,19 +23,22 @@ var $grid = $('.grid').masonry({
 
 // layout Masonry after each image loads
 $grid.imagesLoaded().progress( function() {
-  // update masonry
-  $grid.masonry();
-
-  // update progress bar / modal
+  // update progress
   item_done++;
   pct = Math.round(item_done/item_size*100);
   $('#pct').html(pct+'%');
-  if(item_done == item_size){
-    $('.modal').modal('hide');
 
-    // bind slideshow
+  // when all images loaded
+  if(item_done == item_size){
+    // apply slideshow
     $('.grid').lightGallery({
       selector: '.grid-item a'
     });
+
+    // update masonry
+    $grid.masonry();
+
+    // remove loading modal
+    $('.modal').modal('hide');
   }
 }); 
