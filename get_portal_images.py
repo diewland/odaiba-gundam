@@ -5,6 +5,8 @@ url = "https://m-dot-betaspike.appspot.com/rpc/geoInfo/getPortalImages"
 
 def response(flow):
 
+    print("==>", flow.request.url)
+
     # filter only getPortalImages
     if flow.request.url == url:
 
