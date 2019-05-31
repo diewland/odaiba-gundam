@@ -1,5 +1,7 @@
 # Odaiba Gundam
-Last updated 2018/07/09
+Last updated 2019/05/31
+
+*** Google request cert from mitm.it, I cannot update data :/ ***
 
 ### How to gather portal data
 
