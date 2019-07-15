@@ -13,6 +13,16 @@
     <link href="https://sachinchoolur.github.io/lightGallery/lightgallery/css/lightgallery.css" rel="stylesheet">
     <link href="./web/app.css" rel="stylesheet">
 
+    <!-- native integration -->
+    <link rel="manifest" href="./manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="SSBWear">
+    <link rel="apple-touch-icon" href="./web/144.png">
+    <meta name="msapplication-TileImage" content="./web/144.png">
+    <meta name="msapplication-TileColor" content="#333333">
+    <meta name="theme-color" content="#333333"/>
+
     <title>Odaiba Gundam</title>
   </head>
   <body>
@@ -46,6 +56,16 @@
     <!-- App -->
     <script src="./web/data.js"></script> 
     <script src="./web/app.js"></script>
+    <!-- PWA -->
+    <script>
+      // Check that service workers are supported
+      if ('serviceWorker' in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js');
+        });
+      }
+    </script>
 
   </body>
 </html>
