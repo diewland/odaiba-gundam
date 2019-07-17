@@ -1,0 +1,5 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target" : { "namespace": "android_app", "package_name": "com.diewland.gundam",
+               "sha256_cert_fingerprints": ["5B:9F:C9:E6:33:AD:F6:CE:E8:8F:A8:30:E3:D7:E5:D4:16:77:92:91:85:EB:90:E8:70:47:45:25:92:FA:04:4E"] }
+}]
