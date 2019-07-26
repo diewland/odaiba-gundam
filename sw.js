@@ -2,5 +2,5 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox
 
 // network first
 workbox.routing.setDefaultHandler(
-  new workbox.strategies.NetworkFirst()
+  new workbox.strategies.StaleWhileRevalidate()
 );
