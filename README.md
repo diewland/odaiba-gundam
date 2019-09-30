@@ -1,5 +1,5 @@
 # Odaiba Gundam
-Last updated 2019/06/29
+Last updated 2019/09/30 - Goodbye Redacted 👋
 
 ### How to gather portal data
 
